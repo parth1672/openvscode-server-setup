@@ -1,0 +1,9 @@
+services:
+  openvscode-server:
+    restart: always
+    container_name : ${openvscode-server}
+    image: gitpod/openvscode-server:latest
+    volumes:
+    - ${CODE_WORKING_DIRECTORY}:/home/workspace
+    ports:
+    - '${CODE_PORT}:3000'
